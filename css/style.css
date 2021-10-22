@@ -1,0 +1,29 @@
+.row {
+    margin: 0;
+}
+
+.container {
+    padding: 70px 0;
+}
+
+.container .col a {
+    text-decoration: none;
+}
+
+#brand-name {
+    color: whitesmoke;
+
+}
+
+
+#brand-img {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#nav-container{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
