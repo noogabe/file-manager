@@ -3,6 +3,7 @@
 /* Incluindo conexão PDO com o banco de dados Mysql */
 include_once('connect.php');
 
+/* Função deletar diretório recursivamente */
 function deleteDirectory($diretorio){
 
     /* Verifico se realmente é um diretorio */
@@ -28,6 +29,7 @@ function deleteDirectory($diretorio){
     }
 }
 
+/* Recebendo valor do array input name id_documento na posição zero */
 $id_documento = $_POST['id_documento'][0];
 
 if (isset($id_documento)) {
