@@ -4,7 +4,7 @@
 include_once('connect.php');
 
 //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$select = $pdo->query("SELECT * FROM certificados");
+$select = $pdo->query("SELECT * FROM documentos");
 
 ?>
 
@@ -25,7 +25,7 @@ $select = $pdo->query("SELECT * FROM certificados");
     <link rel='stylesheet' type='text/css' href='css/style.css' media='screen' />
     <link rel='shortcut icon' href='img/icon.png'>
 
-    <title>Certificados</title>
+    <title>Documentos</title>
 </head>
 
 <body>
@@ -47,24 +47,23 @@ $select = $pdo->query("SELECT * FROM certificados");
                 </a>
                 <form class="form-inline">
                     <button id="btn_add" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalInsert">
-                        <span class='material-icons-round align-middle'>add</span>
-                        <strong class="align-middle">Adicionar</strong>
+                        <strong class="align-middle">Enviar Documento</strong>
                     </button>
                 </form>
             </nav>
         </div>
     </header>
 
-    <!-- Modal inserir novo certificado-->
+    <!-- Modal inserir novo documento-->
     <div class="modal fade" id="modalInsert" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Adicionar Novo Certificado</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Enviar Documento</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="add-certificado.php" enctype="multipart/form-data">
+                    <form method="post" action="add-documento.php" enctype="multipart/form-data">
                         <!-- Campo nome do documento -->
                         <div class="form-floating mb-3">
                             <input type="text" autocomplete="off" class="text-box form-control" id="campo_nome_documento" name="nome_documento" placeholder="Nome do documento" required oninvalid="this.setCustomValidity('Ops, você esqueceu de preencher este campo.')" oninput="setCustomValidity('')">
@@ -103,30 +102,48 @@ $select = $pdo->query("SELECT * FROM certificados");
 
     <?php
 
-        /* Exibe alertas de sucesso ou erro de acordo com o valor do parâmetro error passado via GET */
-        if ($erro == 1) {
-            echo "
+    /* Exibe alertas de sucesso ou erro de acordo com o valor do parâmetro error passado via GET */
+    if ($erro == 1) {
+        echo "
             <div id='alertError' class='alert alert-danger d-flex alert-dismissible fade show' role='alert'>
                 <span class='material-icons-round align-middle'>warning</span>
                 <div>
-                    Não foi possível adicionar este certificado! 
+                    Não foi possível adicionar este documento! 
                 </div>
                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>";
-        } else if($erro == 2){
-            echo "
+    } else if ($erro == 2) {
+        echo "
             <div id='alertSuccess' class='alert alert-success d-flex alert-dismissible fade show' role='alert'>
                 <span class='material-icons-round align-middle'>check_circle</span>
                 <div>
-                    Certificado adicionado com sucesso. 
+                    Documento adicionado com sucesso. 
                 </div>
                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>";
-        }
+    } else if ($erro == 3) {
+        echo "
+            <div id='alertSuccess' class='alert alert-success d-flex alert-dismissible fade show' role='alert'>
+                <span class='material-icons-round align-middle'>check_circle</span>
+                <div>
+                    Documento deletado com sucesso. 
+                </div>
+                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>";
+    } else if ($erro == 4) {
+        echo "
+            <div id='alertError' class='alert alert-danger d-flex alert-dismissible fade show' role='alert'>
+                <span class='material-icons-round align-middle'>warning</span>
+                <div>
+                    Não foi possível deletar este documento! 
+                </div>
+                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>";
+    }
 
-        ?>
+    ?>
 
-    <legend id="title" class="title h2 text-center">Lista de Certificados</legend>
+    <legend id="title" class="title h2 text-center">Lista de Documentos</legend>
 
     <!-- Início da grid -->
 
@@ -153,20 +170,24 @@ $select = $pdo->query("SELECT * FROM certificados");
                     Status
                 </div>
             </div>
+            <div class="col">
+                &nbsp;
+            </div>
         </div>
         <?php
 
         /* Se o valor booleano de status_documento for 1 então Homologado, senão Não-Homologado */
+        $tag_de_contagem = 0;
         while ($row = $select->fetch(PDO::FETCH_OBJ)) {
             if ($row->status_documento === '1') $status = "Homologado";
             else $status = "Não-Homologado";
 
-        ?>  
-            <!-- Exibe os certificados cadastrados e na coluna nome_documento exibe um link
+        ?>
+            <!-- Exibe os documento cadastrados e na coluna nome_documento exibe um link
                 com o caminho para fazer download do documento -->
             <div class="row text-left">
                 <div class="col">
-                    <a href="arquivos/<?php echo (urlencode($row->id_certificado)); ?>/<?php echo (urlencode($row->file_nome)); ?>"><?php echo ($row->nome_documento); ?></a>
+                    <a href="arquivos/<?php echo (urlencode($row->id_documento)); ?>/<?php echo (urlencode($row->file_nome)); ?>"><?php echo ($row->nome_documento); ?></a>
                 </div>
                 <div class="col">
                     <?php echo ($row->tipo_atividade); ?>
@@ -177,21 +198,32 @@ $select = $pdo->query("SELECT * FROM certificados");
                 <div class="col">
                     <?php echo ($status); ?>
                 </div>
+                <div class="col">
+                    <form method="post" action="delete-documento.php">
+                        <button id="btn_excluir" name="btn_excluir" type="submit" class="btn btn-link p-1" value="<?php echo ($tag_de_contagem); ?>">
+                            <span class="material-icons-round">delete</span>
+                        </button>
+
+                        <!-- Armazenando o id_documento  -->
+                        <input type="hidden" name="id_documento[]" value='<?php echo ($row->id_documento); ?>'>
+                    </form>
+                </div>
             </div>
+
+
 
         <?php } ?>
 
-        
+
     </div>
 
     <script>
         /* Faz os alertas desaparecerem automaticamente após 5 segundos */
-        $(document).ready(function(){
-            setTimeout(function(){
+        $(document).ready(function() {
+            setTimeout(function() {
                 $('.alert').alert('close');
             }, 5000);
         });
-
     </script>
 
     <!-- Bootstrap Bundle with Popper -->

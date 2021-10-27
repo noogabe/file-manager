@@ -47,3 +47,7 @@ body {
     margin-right: 10px;
 }
 
+#btn_excluir {
+    color: red;
+    max-width: 85%;
+}

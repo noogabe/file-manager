@@ -24,11 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `certificados`
+-- Estrutura da tabela `documentos`
 --
 
-CREATE TABLE `certificados` (
-  `id_certificado` int(11) NOT NULL,
+CREATE TABLE `documentos` (
+  `id_documento` int(11) NOT NULL,
   `nome_documento` varchar(125) DEFAULT NULL,
   `tipo_atividade` varchar(125) DEFAULT NULL,
   `qtde_horas` int(11) DEFAULT NULL,
@@ -39,10 +39,10 @@ CREATE TABLE `certificados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `certificados`
+-- Extraindo dados da tabela `documentos`
 --
 
-INSERT INTO `certificados` (`id_certificado`, `nome_documento`, `tipo_atividade`, `qtde_horas`, `status_documento`, `file_nome`, `file_type`, `file_date`) VALUES
+INSERT INTO `documentos` (`id_documento`, `nome_documento`, `tipo_atividade`, `qtde_horas`, `status_documento`, `file_nome`, `file_type`, `file_date`) VALUES
 (16, 'Criação de Websites com HTML5 e CSS3', 'Desenvolvimento Web', 6, 1, 'certificado.pdf', 'application/pdf', '2021-10-26'),
 (17, 'O que são estruturas de dados e algoritmos', 'Estrutura de dados', 2, 0, 'estrutura-de-dados.pdf', 'application/pdf', '2021-10-26'),
 (18, 'Lógica de programação essencial', 'Lógica de programação', 4, 0, 'logica-de-programacao-essencial.pdf', 'application/pdf', '2021-10-26');
@@ -52,20 +52,20 @@ INSERT INTO `certificados` (`id_certificado`, `nome_documento`, `tipo_atividade`
 --
 
 --
--- Índices para tabela `certificados`
+-- Índices para tabela `documentos`
 --
-ALTER TABLE `certificados`
-  ADD PRIMARY KEY (`id_certificado`);
+ALTER TABLE `documentos`
+  ADD PRIMARY KEY (`id_documento`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de tabela `certificados`
+-- AUTO_INCREMENT de tabela `documentos`
 --
-ALTER TABLE `certificados`
-  MODIFY `id_certificado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+ALTER TABLE `documentos`
+  MODIFY `id_documento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
