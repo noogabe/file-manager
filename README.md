@@ -24,11 +24,13 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 #Parte 3: Clone o repositório para sua máquina local
 $ git clone https://github.com/GabrieleAlmeida/mundojix.git
 
-#Parte 4: No seu navegador, digite localhost/phpmyadmin e crie um banco de dados chamado 'mundojix'
+#Parte 4: Mova o repositório para o diretório C:\xampp\htdocs
 
-#Parte 5: Importe o arquivo mundojix.sql para o seu banco de dados
+#Parte 5: No seu navegador, digite localhost/phpmyadmin e crie um banco de dados chamado 'mundojix'
 
-#Parte 5: Depois é so abrir o seguinte endereço no seu navegador: localhost/mundojix/index.php
+#Parte 6: Importe o arquivo mundojix.sql para o seu banco de dados
+
+#Parte 7: Depois é so abrir o seguinte endereço no seu navegador: localhost/mundojix/index.php
 
 ```
 
