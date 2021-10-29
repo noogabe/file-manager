@@ -1,6 +1,6 @@
 # Aplicaçao Web Gerenciamento de Documentos
 
-## É um Aplicativo Web para para visualizar, deletar, fazer upload e download de documentos
+## É uma Aplicação Web para para visualizar, deletar, fazer upload e download de documentos
 
 ## :rocket: Tecnologias:
 
