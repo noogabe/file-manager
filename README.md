@@ -34,7 +34,7 @@ $ git clone https://github.com/GabrieleAlmeida/mundojix.git
 
 ```
 
-### Resultado do Design:
+## 👁️ Resultado do Design:
 
 <h1 align="center">
 
