@@ -210,10 +210,7 @@ $select = $pdo->query("SELECT * FROM documentos");
                 </div>
             </div>
 
-
-
         <?php } ?>
-
 
     </div>
 
