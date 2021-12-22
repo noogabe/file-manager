@@ -39,9 +39,9 @@ $ git clone https://github.com/GabrieleAlmeida/mundojix.git
 <h1 align="center">
 
 <img src="https://github.com/GabrieleAlmeida/mundojix/blob/main/img/index.png"
-    height="400">
+    height="100%">
 
 <img src="https://github.com/GabrieleAlmeida/mundojix/blob/main/img/add-documento.png"
-    height="400">
+    height="100%">
     
 </h1>
