@@ -10,7 +10,6 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - [CSS](https://www.w3schools.com/css/)
 - [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 - [PHP](https://www.php.net/)
-- [PDO](https://www.php.net/manual/pt_BR/book.pdo.php)
 - [Mysql](https://www.mysql.com/)
 - [Xampp](https://www.apachefriends.org/pt_br/download.html)
 
