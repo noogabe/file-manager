@@ -1,10 +1,9 @@
-# Aplicaçao Web Gerenciamento de Documentos
+# File manager web application
+## This is a web application to upload, download, visualize and delete files 
 
-## É uma Aplicação Web para para visualizar, deletar, fazer upload e download de documentos
+## :rocket: Technologies:
 
-## :rocket: Tecnologias:
-
-Este projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed using the following technologies:
 
 - [HTML](https://www.w3schools.com/html/)
 - [CSS](https://www.w3schools.com/css/)
@@ -13,27 +12,27 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - [Mysql](https://www.mysql.com/)
 - [Xampp](https://www.apachefriends.org/pt_br/download.html)
 
-## :information_source: Instalação
+## :information_source: Installation
 
 ```bash
-#Parte 1: Faça download do Xampp 
+#1: Download Xampp 
 
-#Parte 2: No Xampp, dê start nos módulos Apache e Mysql
+#2: In Xampp, start the Apache and Mysql modules
 
-#Parte 3: Clone o repositório para sua máquina local
-$ git clone https://github.com/GabrieleAlmeida/mundojix.git
+#3: Clone the repository to your local machine
+$ git clone https://github.com/noogabe/file-manager.git
 
-#Parte 4: Mova o repositório para o diretório C:\xampp\htdocs
+#4: Move the repository to the C:\xampp\htdocs directory
 
-#Parte 5: No seu navegador, digite localhost/phpmyadmin e crie um banco de dados chamado 'mundojix'
+#5: In your browser, type https://localhost/phpmyadmin and create a database called 'file-manager'
 
-#Parte 6: Importe o arquivo mundojix.sql para o seu banco de dados
+#6: Import the file-manager.sql file into your database
 
-#Parte 7: Depois é so abrir o seguinte endereço no seu navegador: localhost/mundojix/index.php
+#7: Then just open the following address in your browser: https://localhost/file-manager/index.php
 
 ```
 
-## 👁️ Resultado do Design:
+## 👁️ Result:
 
 <h1 align="center">
 
