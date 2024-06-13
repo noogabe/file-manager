@@ -42,12 +42,11 @@ $select = $pdo->query("SELECT * FROM documentos");
         <div class="container" id="nav-container">
             <nav class="navbar navbar-light bg-dark fixed-top">
                 <a href="index.php" id="brand-name" class="navbar-brand">
-                    <img id="brand-img" src="img/logo.PNG" alt="Grupo tiradentes" width="30" height="30" class="d-inline-block align-text-top">
-                    Grupo Tiradentes
+                    <img id="brand-img" src="img/logo.PNG" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                 </a>
                 <form class="form-inline">
                     <button id="btn_add" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalInsert">
-                        <strong class="align-middle">Enviar Documento</strong>
+                        <strong class="align-middle">Novo Documento</strong>
                     </button>
                 </form>
             </nav>
