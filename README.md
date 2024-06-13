@@ -24,7 +24,7 @@ $ git clone https://github.com/noogabe/file-manager.git
 
 #4: Move the repository to the C:\xampp\htdocs directory
 
-#5: In your browser, type https://localhost/phpmyadmin and create a database called 'file-manager'
+#5: In your browser, type https://localhost:80/phpmyadmin and create a database called 'file-manager'
 
 #6: Import the file-manager.sql file into your database
 
@@ -36,10 +36,10 @@ $ git clone https://github.com/noogabe/file-manager.git
 
 <h1 align="center">
 
-<img src="https://github.com/GabrieleAlmeida/mundojix/blob/main/img/index.png"
+<img src="https://github.com/noogabe/file-manager/blob/main/img/index.png"
     height="100%">
 
-<img src="https://github.com/GabrieleAlmeida/mundojix/blob/main/img/add-documento.png"
+<img src="https://github.com/noogabe/file-manager/blob/main/img/add-documento.png"
     height="100%">
     
 </h1>
