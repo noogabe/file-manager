@@ -28,7 +28,7 @@ $ git clone https://github.com/noogabe/file-manager.git
 
 #6: Import the file-manager.sql file into your database
 
-#7: Then just open the following address in your browser: https://localhost/file-manager/index.php
+#7: Then just open the following address in your browser: https://localhost:80/file-manager/index.php
 
 ```
 
